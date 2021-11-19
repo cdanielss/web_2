@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.text import slugify
-from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -8,7 +7,7 @@ class Post(models.Model):
     intro = models.CharField('Introdução', max_length=500, blank=False, null=False)
     resume = models.TextField('Resumo', blank=False, null=False)
     conclusion = models.TextField('Conclusão', blank=False, null=False)
-    image = models.ImageField()
+    image = models.CharField('Link da Imagem', max_length=200, blank=False, null=False)
 
     price = models.FloatField('Preço', blank=False, null=False)
     graphics = models.FloatField('Gráficos', blank=False, null=False)

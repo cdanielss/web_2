@@ -26,13 +26,12 @@
 						<li><a href="#">RPG</a></li>
 						<li><a href="#">Online</a></li>
 					</ul>
-					{% if post_list %}
-						{% for post  in post_list %}
+					{% if pesquisa %}
+						{% for post in pesquisa %}
 							<div class="blog-item">
 								<div class="blog-thumb">
-									<img src="../../static/img/blog/{{post.image}}" width="362" height="300.7"alt="">
+									<img src="{{post.image}}" width="362" height="300.7"alt="">
 								</div>
-							
 								<div class="blog-text text-box text-white">
 									<div class="top-meta">{{post.date}}  /  em <a href="">Games</a></div>
 									<h3>{{post.title}}</h3>
@@ -40,9 +39,25 @@
 									<a href="{% url 'core:detail' post.id %}" class="read-more">Ler agora  <img src="../../static/img/icons/double-arrow.png" alt="#"/></a>
 								</div>
 							</div>
-						
 						{% endfor %}
-					{% else %}
+					{%else%}
+						{% if post_list %}
+							{% for post  in post_list %}
+								<div class="blog-item">
+									<div class="blog-thumb">
+										<img src="{{post.image}}" width="362" height="300.7"alt="">
+									</div>
+								
+									<div class="blog-text text-box text-white">
+										<div class="top-meta">{{post.date}}  /  em <a href="">Games</a></div>
+										<h3>{{post.title}}</h3>
+										<p>{{post.intro}}</p>
+										<a href="{% url 'core:detail' post.id %}" class="read-more">Ler agora  <img src="../../static/img/icons/double-arrow.png" alt="#"/></a>
+									</div>
+								</div>
+							
+							{% endfor %}
+						{% else %}
 						<div class="blog-item">
 							<div class="blog-thumb">
 								<img src="../../static/img/blog/1.jpg" alt="">
@@ -54,6 +69,7 @@
 							</div>
 						</div>
 					{% endif %}
+				{% endif %}
 					<div class="site-pagination">
 						<a href="#" class="active">01.</a>
 						<a href="#">02.</a>
