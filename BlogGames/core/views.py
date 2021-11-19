@@ -1,7 +1,23 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Email
 # Create your views here.
+
 def index(request):
+    emailB = Email.objects.all()
+    listaEmails = []
+    for i in emailB:
+        listaEmails.append(i.emails2)
+    
+    if 'email' in request.POST:
+        emailL = request.POST['email']
+        if emailL in listaEmails:
+            print("Ja existe")
+
+        else:
+            s = Email(emails2=emailL)
+            s.save()
+            print("Salvou o Email:", emailL)
+    print(listaEmails)
     # Cookies
     num_visits = request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits + 1

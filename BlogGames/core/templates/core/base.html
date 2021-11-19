@@ -72,9 +72,10 @@
 	<section class="newsletter-section">
 		<div class="container">
 			<h2>Assine o nosso Blog</h2>
-			<form class="newsletter-form">
-				<input type="text" placeholder="Coloque seu E-MAIL">
-				<button class="site-btn">Inscrever-se  <img src="../../static/img/icons/double-arrow.png" alt="#"/></button>
+			<form method="POST" class="newsletter-form">
+				{% csrf_token %}
+				<input required="required" type="email" name="email" placeholder="Coloque seu E-MAIL">
+				<button type="submit" class="site-btn">Inscrever-se <img src="../../static/img/icons/double-arrow.png" alt="#"/></button>
 			</form>
 		</div>
 	</section>
