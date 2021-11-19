@@ -1,0 +1,44 @@
+#Criando o env:
+    python3 -m venv env 
+
+#Ativando o env:
+    source env/bin/activate
+
+#Desativando o env:
+    deactivate
+
+#Instalando o Django:
+    pip3 install django
+
+#Vendo todas as Depencias instaladas no env:
+    pip freeze
+
+#Criando Projeto com Django:
+    django-admin startproject BlogGames
+
+#Rodando Projeto:
+    cd BlogGames
+    python3 manage.py runserver
+
+#Fazendo as Migrações:
+    python manage.py migrate
+
+#Criando ADMIN:
+    python manage.py createsuperuser
+
+    #Admin criado:
+        #usuario: admin
+        #senha: admin2021
+
+#Criando Aplicação:
+    python manage.py startapp core
+
+#Apos criar os Models:
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+
+#Instalando Ckeditor:
+    pip3 install django-ckeditor
+
+#Rodando Comando para Ckeditor:
+    python3 manage.py collectstatic

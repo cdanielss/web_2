@@ -1,0 +1,65 @@
+{% extends './base.html' %}
+
+{% block content %}
+	
+	<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="../../static/img/page-top-bg/4.jpg">
+		<div class="page-info">
+			<h2>Contato</h2>
+			<div class="site-breadcrumb">
+				<a href="home">Home</a>  /
+				<span>Contato</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page top end-->
+
+
+	<!-- Contact page -->
+	<section class="contact-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 order-2 order-lg-1">
+					
+					<form action="/home" class="contact-form">
+						<input type="text" placeholder="Seu Nome" title="Nome"  required>
+						<input type="email" placeholder="Seu e-mail" title="E-mail" required>
+						<div class="opcoes">
+							<select >
+								<optgroup label="Escolhar um assunto" title="Assunto">
+								  <option value="existing_partner_a">Parcerias</option>
+								  <option value="existing_partner_b">Sugestões</option>
+								  <option value="existing_partner_others">Outros</option>
+								</optgroup>
+							</select>
+						</div>
+						  <br>
+						  <br>
+						<!-- <input type="text" placeholder="Subject"> -->
+						<textarea placeholder="Texto" title="Assunto"  required></textarea>
+						<button type="submit" class="site-btn">Envie a mensagem<img src="../../static/img/icons/double-arrow.png" alt="#"/></button>
+					</form>
+				</div>
+				<div class="col-lg-5 order-1 order-lg-2 contact-text text-white">
+					<h3>Gamer! Diga Olá</h3>
+					<p>Ficamos muito felizes com seu acesso e sua visita ao nosso Blog, mande um feedback.</p>
+					<div class="cont-info">
+						<div class="ci-icon"><img src="../../static/img/icons/location.png" alt=""></div>
+						<div class="ci-text">Avenida Joao 23, n° 12, Picos</div>
+					</div>
+					<div class="cont-info">
+						<div class="ci-icon"><img src="../../static/img/icons/phone.png" alt=""></div>
+						<div class="ci-text">+55 89 999022113</div>
+					</div>
+					<div class="cont-info">
+						<div class="ci-icon"><img src="../../static/img/icons/mail.png" alt=""></div>
+						<div class="ci-text">blog@contact.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact page end-->
+
+
+{% endblock %}

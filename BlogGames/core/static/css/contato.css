@@ -1,0 +1,18 @@
+.select-contato {
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    min-width: 186px;
+    padding: 24px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: #081624;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
