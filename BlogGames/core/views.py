@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Post, Email
+import operator
+import functools
+from django.db.models import Q 
 # Create your views here.
 
 def index(request):
@@ -37,9 +40,25 @@ def sobre(request):
 
 def blog(request):
     posts = Post.objects.all().order_by('-id')
-    data = {
-        'post_list': posts,
-    }
+    if 'search' in request.GET:
+        try:
+            search_term = request.GET['search']
+            query = functools.reduce(operator.and_, (Q(title__icontains = item) for item in search_term.split()))
+            search_result = Post.objects.all().filter(query).distinct().order_by('-id') 
+            data = {
+                'post_list': posts,
+                'pesquisa': search_result,
+            }
+        except:
+            data = {
+                'post_list': posts,
+            }
+            search_result = None
+    else:
+        data = {
+            'post_list': posts,
+        }
+        search_result = None
     return render(request, 'core/blog.html', data)
 
 def detail(request, id):
