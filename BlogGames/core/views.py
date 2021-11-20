@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Email
+from .models import Post, Email, Contato
 import operator
 import functools
 from django.db.models import Q 
@@ -33,6 +33,15 @@ def index(request):
     return render(request, 'core/index.html', data)
 
 def contato(request):
+    if request.method == 'POST':
+        nome_post = request.POST.get('nome')
+        email_post = request.POST.get('email')
+        escolha_post = request.POST.get('escolha')
+        mensagem_post = request.POST.get('mensagem')
+        c = Contato(nome=nome_post, email=email_post, tipo=escolha_post, mensagem=mensagem_post)
+        c.save()
+        print("Mensagem salva", nome_post, email_post, escolha_post, mensagem_post)
+
     return render(request, 'core/contato.html')
 
 def sobre(request):

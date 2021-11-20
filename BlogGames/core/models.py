@@ -34,3 +34,9 @@ class Post(models.Model):
 
 class Email(models.Model):
     emails2 = models.EmailField(default="c@c.com", max_length=50)
+
+class Contato(models.Model):
+    nome =  models.CharField(default="", max_length=50)
+    email = models.EmailField(default="c@c.com", max_length=50)
+    tipo = models.CharField(default="", max_length=50)
+    mensagem = models.CharField(default="", max_length=500)
