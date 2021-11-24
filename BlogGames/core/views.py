@@ -78,4 +78,6 @@ def detail(request, id):
         'total':total
     }
     return render(request, 'core/gamesingle.html', data) 
-    
+
+def menu(request):
+    return render(request, 'core/menu.html')  

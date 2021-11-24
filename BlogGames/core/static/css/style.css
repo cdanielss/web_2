@@ -112,6 +112,13 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
+#menuContato{
+	color: #fff !important;
+	margin-right: 48px;
+}
+#linkContato {
+	font-size: 30px;
+}
 
 .section-title h2 {
 	font-size: 30px;
